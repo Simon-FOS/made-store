@@ -1,0 +1,69 @@
+{
+  "name": "made-store",
+  "version": "1.0.0",
+  "description": "Modular server-rendered e-commerce app built for MadePetal Clinic & Spa using Express, Handlebars, Sequelize (Postgres), Multer, Cloudinary, and Passport (Local Auth). Fully modular structure for scalability and clarity.",
+  "homepage": "https://github.com/Simon-FOS/made-store#readme",
+  "bugs": {
+    "url": "https://github.com/Simon-FOS/made-store/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Simon-FOS/made-store.git"
+  },
+  "license": "MIT",
+  "author": "Simon-FOS <ogbanjesi@gmail.com>",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "jest"
+  },
+  "keywords": [
+    "made-store",
+    "madepetal",
+    "ecommerce",
+    "express",
+    "express-handlebars",
+    "sequelize",
+    "postgres",
+    "passport-local",
+    "multer",
+    "cloudinary",
+    "modular",
+    "mvc",
+    "nodejs",
+    "server-rendered",
+    "beauty-products",
+    "spa",
+    "admin-dashboard",
+    "authentication",
+    "secure-upload",
+    "madepetal-clinic",
+    "nexusjs"
+  ],
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "nodemon": "^3.0.3",
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^1.41.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.11.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.1"
+  }
+}
