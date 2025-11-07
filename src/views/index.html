@@ -5,71 +5,67 @@
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MadePetal Clinic & Spa | Relax & Rejuvenate</title>
+    <title>MadePetal Clinic & Spa | Premium Beauty Products & Treatments</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
 
     <!-- ========== HERO SECTION ========== -->
-    <!-- Hero Section with Background Image -->
     <header class="hero-section">
-        <!-- Carousel -->
         <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active" data-bs-interval="3000"
-                    style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('static/img/mp5.jpg') center/cover no-repeat; height: 100vh;">
+                <!-- Slide 1 - Main Product Focus -->
+                <div class="carousel-item active" data-bs-interval="4000"
+                    style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/img/mp5.jpg') center/cover no-repeat;">
                     <div class="container h-100 d-flex align-items-center">
                         <div class="hero-text text-white">
-                            <h1 class="display-4 fw-bold">Revitalize Your Senses</h1>
-                            <p class="lead">Wellness Begins With You</p>
-                            <a href="contact.html" class="btn btn-lemon btn-lg mt-3">Take the First Step</a>
+                            <span class="badge bg-primary mb-3">Premium Organic</span>
+                            <h1 class="display-4 fw-bold mb-3">Clinical-Grade Skincare</h1>
+                            <p class="lead mb-4">Nature meets science for radiant, healthy skin</p>
+                            <div class="hero-buttons">
+                                <a href="product.html" class="btn btn-primary btn-lg me-3">Shop Products</a>
+                                <a href="services.html" class="btn btn-outline-light btn-lg">Book Treatment</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
-                <div class="carousel-item" data-bs-interval="3000"
-                    style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('static/img/PDO.jpg') center/cover no-repeat; height: 100vh;">
+                <!-- Slide 2 - Special Offers -->
+                <div class="carousel-item" data-bs-interval="4000"
+                    style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/img/PDO.jpg') center/cover no-repeat;">
                     <div class="container h-100 d-flex align-items-center">
                         <div class="hero-text text-white">
-                            <h1 class="display-4 fw-bold">Find Your Balance</h1>
-                            <p class="lead">Harmony for Body and Mind</p>
-                            <a href="services.html" class="btn btn-lemon btn-lg mt-3">Explore Services</a>
+                            <span class="badge bg-danger mb-3">Limited Time</span>
+                            <h1 class="display-4 fw-bold mb-3">Summer Glow Collection</h1>
+                            <p class="lead mb-4">Save 20% on all skincare bundles this season</p>
+                            <a href="offers.html" class="btn btn-primary btn-lg">View Offers</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 3 -->
-                <div class="carousel-item" data-bs-interval="3000"
-                    style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('static/img/prodt.jpg') center/cover no-repeat; height: 100vh;">
+                <!-- Slide 3 - Professional Services -->
+                <div class="carousel-item" data-bs-interval="4000"
+                    style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/img/prodt.jpg') center/cover no-repeat;">
                     <div class="container h-100 d-flex align-items-center">
                         <div class="hero-text text-white">
-                            <h1 class="display-4 fw-bold">Professional Care</h1>
-                            <p class="lead">Expert Practitioners Ready to Help</p>
-                            <a href="team.html" class="btn btn-lemon btn-lg mt-3">Meet Our Team</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 4 -->
-                <div class="carousel-item" data-bs-interval="3000"
-                    style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('static/img/fatd2.jpeg') center/cover no-repeat; height: 100vh;">
-                    <div class="container h-100 d-flex align-items-center">
-                        <div class="hero-text text-white">
-                            <h1 class="display-4 fw-bold">Special Offers</h1>
-                            <p class="lead">Exclusive Packages for New Clients</p>
-                            <a href="offers.html" class="btn btn-lemon btn-lg mt-3">View Offers</a>
+                            <span class="badge bg-success mb-3">Expert Care</span>
+                            <h1 class="display-4 fw-bold mb-3">Aesthetic Treatments</h1>
+                            <p class="lead mb-4">Certified professionals delivering proven results</p>
+                            <a href="services.html" class="btn btn-primary btn-lg">Explore Services</a>
                         </div>
                     </div>
                 </div>
@@ -77,277 +73,285 @@
         </div>
     </header>
 
-    <!-- About Us Section -->
-    <section class="position-relative vh-100 overflow-hidden">
-        <!-- Background image with overlay - Pure Bootstrap -->
-        <div class="w-100 h-100 position-absolute top-0 start-0 
-                bg-dark bg-opacity-75" style="background: url('static/img/mp2.png') center/cover fixed;">
-        </div>
-
-        <!-- Content -->
-        <div class="container position-relative py-5 h-100 d-flex align-items-center text-white" style="z-index: 1;">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="mb-4 text-center">Welcome to MadePetal Clinic and Spa</h2>
-                    <div class="text-justify">
-                        <p class="mb-4">
-                            Established in 2021 and located in Magboro, Lagos-Ibadan Express Way, MadePetal Clinic and
-                            Spa is your premier destination for bespoke organic skincare, luxurious spa treatments, and
-                            advanced aesthetic services. We specialize in formulating high-quality, organic skincare
-                            products tailored to your unique needs, alongside a curated selection of rejuvenating spa
-                            and aesthetic treatments designed to enhance your natural beauty.
-                        </p>
-                        <p class="mb-4">
-                            At MadePetal, we combine science and nature to deliver exceptional results. Our expert team
-                            is dedicated to providing personalized, professional, and transformative experiences that
-                            leave you feeling refreshed, revitalized, and radiant.
-                        </p>
-                        <p class="mb-4">
-                            Stay connected with us for exclusive promotions, last-minute appointment openings, and
-                            special announcements by following our social media pages.
-                        </p>
-                        <p class="mb-4 fw-bold text-center">
-                            📲 Follow us on Instagram @ Tiktok: @madepetalclinicandspa
-                        </p>
-                        <p class="mb-4">
-                            Thank you for choosing MadePetal Clinic and Spa – where organic beauty meets expert care.
-                        </p>
-                        <p class="mb-0">
-                            Proudly serving Lagos, Ogun, Oyo and beyond since 2021.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container-fluid py-5" style="background-color: #E9FF70;">
+    <!-- ========== FEATURED PRODUCTS ========== -->
+    <section class="featured-products py-5">
         <div class="container">
-            <h2 class="text-center mb-5 text-black">WHY CHOOSE US:</h2>
-            <div class="row align-items-center">
-                <!-- Left Column - Image -->
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="static/img/Made.jpg" alt="Spa Aesthetician" class="img-fluid rounded">
-                </div>
-
-                <!-- Right Column - Text Content -->
-                <div class="col-lg-6">
-                    <div class="px-3 text-justify">
-                        <p class="text-black mb-3" style="text-align: justify; text-justify: inter-word;">
-                            At MadePetal Clinic and Spa, we pride ourselves on being one of the leading providers of
-                            Spa, Aesthetics, and Skincare solutions in the Lagos/Ogun region. Our reputation is built on
-                            a foundation of excellence, client satisfaction, and proven results.
-                        </p>
-                        <p class="text-black mb-3" style="text-align: justify; text-justify: inter-word;">
-                            We offer a wide range of top-tier services designed to meet diverse beauty and wellness
-                            needs. From luxurious spa treatments to advanced aesthetic procedures and personalized
-                            skincare solutions, we are your one-stop destination for total body rejuvenation.
-                        </p>
-                        <p class="text-black mb-3" style="text-align: justify; text-justify: inter-word;">
-                            Our skincare line features carefully formulated organic products suitable for all skin
-                            types. Whether you're dealing with acne, hyperpigmentation, uneven tone, or other skin
-                            concerns, we provide effective treatments tailored to your unique skin goals. With years of
-                            experience, our methods are not only result-oriented but also safe and client-focused.
-                        </p>
-                        <p class="text-black mb-0" style="text-align: justify; text-justify: inter-word;">
-                            At MadePetal, we go beyond service delivery — we build relationships. Our global delivery
-                            service ensures that no matter where you are, you can enjoy our premium skincare products.
-                            We also keep our clients fully informed every step of the way, offering expert advice,
-                            regular updates, and personalised guidance to help them achieve their desired look. Choose
-                            MadePetal Clinic and Spa — where beauty meets expertise, and every client experience is
-                            crafted with care, passion, and professionalism.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== SERVICES SECTION ========== -->
-    <section class="py-5 bg-dark">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Our Premium Services</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 800px;">
-                    Professional treatments designed to enhance your natural beauty and boost your confidence
-                </p>
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Best Selling Products</h2>
+                <p class="section-subtitle">Customer favorites for radiant, healthy skin</p>
             </div>
 
             <div class="row g-4">
-                <!-- Service 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="static/img/fatD.png" class="card-img-top" alt="Fat Dissolving Treatment">
-                        <div class="card-body">
-                            <h5 class="card-title">Fat Dissolving</h5>
-                            <p class="card-text text-muted">
-                                Non-surgical treatment that targets and eliminates stubborn fat cells for natural
-                                contouring.
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/Products/x16.jpg" alt="Hydrating Face Serum" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <a href="#" class="btn btn-outline-light">Quick View</a>
+                            </div>
+                            <span class="product-badge badge-sale">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Hydrating Face Serum</h5>
+                            <p class="product-price">
+                                <span class="current-price">₦4,850.00</span>
+                                <span class="original-price">₦6,000.00</span>
                             </p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(128)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="static/img/ButtF.jpeg" class="card-img-top" alt="Buttock Enhancement">
-                        <div class="card-body">
-                            <h5 class="card-title">Buttock & Fillers</h5>
-                            <p class="card-text text-muted">
-                                Enhance your curves with safe, natural-looking filler treatments for volume and shape.
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/Products/x12.jpg" alt="Revitalizing Eye Cream" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <a href="#" class="btn btn-outline-light">Quick View</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Revitalizing Eye Cream</h5>
+                            <p class="product-price">
+                                <span class="current-price">₦7,000.00</span>
                             </p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="rating-count">(95)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="static/img/PDO.jpg" class="card-img-top" alt="PDO Threads Treatment">
-                        <div class="card-body">
-                            <h5 class="card-title">PDO Threads</h5>
-                            <p class="card-text text-muted">
-                                Non-surgical facelift using absorbable threads to lift and tighten sagging skin.
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/Products/x14.jpg" alt="Gentle Foam Cleanser" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <a href="#" class="btn btn-outline-light">Quick View</a>
+                            </div>
+                            <span class="product-badge badge-new">New</span>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Gentle Foam Cleanser</h5>
+                            <p class="product-price">
+                                <span class="current-price">₦14,500.00</span>
                             </p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-count">(156)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Service 4 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="static/img/skintg.jpeg" class="card-img-top" alt="Skin Tags Removal">
-                        <div class="card-body">
-                            <h5 class="card-title">Skin Tags Removal</h5>
-                            <p class="card-text text-muted">
-                                Quick, painless removal of skin tags with minimal downtime and no scarring.
-                            </p>
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/Products/x11.jpg" alt="Anti-Aging Moisturizer" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <a href="#" class="btn btn-outline-light">Quick View</a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="static/img/facls.jpeg" class="card-img-top" alt="Professional Facials">
-                        <div class="card-body">
-                            <h5 class="card-title">Facials</h5>
-                            <p class="card-text text-muted">
-                                Customized facial treatments to rejuvenate your skin and restore youthful glow.
+                        <div class="product-info">
+                            <h5 class="product-title">Anti-Aging Moisturizer</h5>
+                            <p class="product-price">
+                                <span class="current-price">₦11,800.00</span>
                             </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="static/img/prodt.jpg" class="card-img-top" alt="Skincare Products">
-                        <div class="card-body">
-                            <h5 class="card-title">Skincare Products</h5>
-                            <p class="card-text text-muted">
-                                Premium medical-grade skincare formulations for home use between treatments.
-                            </p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(203)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="text-center mt-5">
-                <a href="services.html" class="btn btn-primary px-4 py-2">View All Services</a>
+                <a href="product.html" class="btn btn-outline-primary btn-lg">View All Products</a>
             </div>
         </div>
     </section>
 
-    <!-- ========== SKINCARE PRODUCTS ========== -->
-    <section class="products-section py-5 bg-light">
+    <!-- ========== ABOUT US ========== -->
+    <section class="about-section position-relative py-5">
+        <!-- Background Image with Overlay -->
+        <div class="about-bg-container">
+            <div class="about-bg-image" style="background-image: url('/public/img/Made.jpg');"></div>
+            <div class="about-bg-overlay"></div>
+        </div>
+
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content bg-white p-4 rounded shadow-sm">
+                        <h2 class="section-title">Welcome to MadePetal Clinic & Spa</h2>
+                        <p class="lead text-primary">Where organic beauty meets expert clinical care</p>
+                        <p class="text-dark">Established in 2021, MadePetal Clinic and Spa is your premier destination
+                            for bespoke organic
+                            skincare, luxurious spa treatments, and advanced aesthetic services in Magboro, Lagos-Ibadan
+                            Express Way.</p>
+
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-leaf"></i>
+                                <div>
+                                    <h5>Organic Formulations</h5>
+                                    <p>High-quality, natural ingredients tailored to your skin</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-flask"></i>
+                                <div>
+                                    <h5>Clinical Expertise</h5>
+                                    <p>Science-backed treatments with proven results</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shipping-fast"></i>
+                                <div>
+                                    <h5>Global Delivery</h5>
+                                    <p>Premium skincare delivered to your doorstep</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-cta">
+                            <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+                            <a href="about.html" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image ps-lg-4">
+                        <img src="/public/img/Mad.jpg" alt="MadePetal Clinic" class="img-fluid rounded shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="services-section py-5 bg-light">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold text-dark">Our Skincare Products</h2>
-                <p class="lead text-black max-w-800 mx-auto">
-                    Nourish your skin with our premium, dermatologist-approved skincare line.
-                    Each product is crafted with natural ingredients to enhance your spa experience
-                    and prolong your glow at home.
-                </p>
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Our Premium Services</h2>
+                <p class="section-subtitle">Professional treatments for enhanced natural beauty</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="assets/img/fatD.png" alt="Fat Dissolving Treatment" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h5>Fat Dissolving</h5>
+                            <p>Non-surgical treatment targeting stubborn fat cells for natural contouring</p>
+                            <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="assets/img/ButtF.jpeg" alt="Buttock Enhancement" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h5>Buttock & Fillers</h5>
+                            <p>Safe, natural-looking filler treatments for enhanced curves and volume</p>
+                            <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="assets/img/PDO.jpg" alt="PDO Threads Treatment" class="img-fluid">
+                        </div>
+                        <div class="service-content">
+                            <h5>PDO Threads</h5>
+                            <p>Non-surgical facelift using absorbable threads for skin lifting and tightening</p>
+                            <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="services.html" class="btn btn-primary btn-lg">View All Services</a>
             </div>
         </div>
+    </section>
 
-        <div class="row g-4">
-            <!-- Product 1 -->
-            <div class="col-md-3 col-6">
-                <div class="product-card text-center h-100 d-flex flex-column">
-                    <div class="product-img-container ratio ratio-1x1 mb-3">
-                        <img src="static/img/Products/x16.jpg" alt="Hydrating Face Serum"
-                            class="img-fluid object-fit-cover rounded">
-                        <div class="product-overlay d-flex align-items-center justify-content-center">
-                            <button class="btn btn-sm btn-outline-light">View Details</button>
-                        </div>
+    <!-- ========== WHY CHOOSE US ========== -->
+    <section class="why-choose-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="assets/img/Made.jpg" alt="Spa Aesthetician" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">Why Choose MadePetal?</h2>
+                    <div class="why-choose-content">
+                        <p class="mb-3">
+                            At MadePetal Clinic and Spa, we pride ourselves on being one of the leading providers of
+                            Spa, Aesthetics, and Skincare solutions in the Lagos/Ogun region.
+                        </p>
+                        <p class="mb-3">
+                            Our skincare line features carefully formulated organic products suitable for all skin
+                            types. Whether you're dealing with acne, hyperpigmentation, or other skin concerns, we
+                            provide effective treatments tailored to your unique skin goals.
+                        </p>
+                        <p class="mb-0">
+                            We go beyond service delivery — we build relationships. Our global delivery service ensures
+                            you can enjoy our premium skincare products anywhere.
+                        </p>
                     </div>
-                    <h5 class="mt-auto text-dark">Hydrating Face Serum</h5>
-                    <p class="text-body small mb-0">₦4,850.00</p>
                 </div>
             </div>
-
-            <!-- Product 2 -->
-            <div class="col-md-3 col-6">
-                <div class="product-card text-center h-100 d-flex flex-column">
-                    <div class="product-img-container ratio ratio-1x1 mb-3">
-                        <img src="static/img/Products/x12.jpg" alt="Revitalizing Eye Cream"
-                            class="img-fluid object-fit-cover rounded">
-                        <div class="product-overlay d-flex align-items-center justify-content-center">
-                            <button class="btn btn-sm btn-outline-light">View Details</button>
-                        </div>
-                    </div>
-                    <h5 class="mt-auto text-dark">Revitalizing Eye Cream</h5>
-                    <p class="text-body small mb-0">₦7,000</p>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="col-md-3 col-6">
-                <div class="product-card text-center h-100 d-flex flex-column">
-                    <div class="product-img-container ratio ratio-1x1 mb-3">
-                        <img src="static/img/Products/x14.jpg" alt="Gentle Foam Cleanser"
-                            class="img-fluid object-fit-cover rounded">
-                        <div class="product-overlay d-flex align-items-center justify-content-center">
-                            <button class="btn btn-sm btn-outline-light">View Details</button>
-                        </div>
-                    </div>
-                    <h5 class="mt-auto text-dark">Gentle Foam Cleanser</h5>
-                    <p class="text-body small mb-0">₦14,500</p>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="col-md-3 col-6">
-                <div class="product-card text-center h-100 d-flex flex-column">
-                    <div class="product-img-container ratio ratio-1x1 mb-3">
-                        <img src="static/img/Products/x11.jpg" alt="Anti-Aging Moisturizer"
-                            class="img-fluid object-fit-cover rounded">
-                        <div class="product-overlay d-flex align-items-center justify-content-center">
-                            <button class="btn btn-sm btn-outline-light">View Details</button>
-                        </div>
-                    </div>
-                    <h5 class="mt-auto text-dark">Anti-Aging Moisturizer</h5>
-                    <p class="text-body small mb-0">₦11,800</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center mt-4 mb-5">
-            <a href="#" class="btn btn-primary">View All Products</a>
-        </div>
         </div>
     </section>
 
 
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="static/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
-
-
 
 </html>
