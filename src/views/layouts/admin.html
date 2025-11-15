@@ -5,10 +5,9 @@
     <meta charset="utf-8">
     <meta name="description"
         content="A lightweight **Express.js framework** with **Sequelize**, **automatic module generation**, **authentication**, and a **CLI** for easy development.">
-    <meta name="keywords"
-        content="nexus, nexusjs, framework">
-    <meta name="author" content="nathius262">
-    <meta property="og:title" content="NexusJs - Admin | {{pageTitle}}">
+    <meta name="keywords" content="nexus, nexusjs, framework">
+    <meta name="author" content="MadePetal">
+    <meta property="og:title" content="MadePetal - Admin | {{pageTitle}}">
     <meta property="og:description"
         content="A lightweight **Express.js framework** with **Sequelize**, **automatic module generation**, **authentication**, and a **CLI** for easy development.">
     <meta property="og:image" content={{pageLogo}}>
@@ -23,7 +22,7 @@
     <meta name="twitter:image" content={{pageLogo}} id="twitterImage">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>NexusJs - Admin | {{pageTitle}}</title>
+    <title>MadePetal - Admin | {{pageTitle}}</title>
 
     <link rel="icon" href="/assets/img/logo.jpg">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&amp;display=swap" rel="stylesheet">
@@ -47,12 +46,12 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    
+
 
 </head>
 
 <body>
-    
+
 
     <!--============ROOT SECTION==============-->
     <section id="root" class=" position-relative overflow-x-hidden">
@@ -61,7 +60,7 @@
             <div class="sidebar-header p-3 border-bottom border-secondary">
                 <h4 class="mb-0">
                     <i class="fas fa-project-diagram me-2"></i>
-                    NexusJs
+                    MadePetal Admin
                 </h4>
             </div>
             <div class="sidebar-menu p-3">
@@ -70,6 +69,12 @@
                         <a class="nav-link text-white d-flex align-items-center" href="/admin">
                             <i class="fas fa-tachometer-alt me-2"></i>
                             Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link text-white d-flex align-items-center" href="/admin/category">
+                            <i class="fas fa-tags me-2"></i>
+                            Categories
                         </a>
                     </li>
                     <li class="nav-item mb-2">
@@ -116,10 +121,11 @@
                     <button class="btn btn-sm" id="sidebarToggle">
                         <i class="fas fa-bars"></i>
                     </button>
-                    
+
                     <div class="d-flex align-items-center ms-auto">
                         <div class="dropdown me-3">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="notificationsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="notificationsDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-bell"></i>
                                 <span class="badge bg-danger rounded-pill">3</span>
                             </button>
@@ -129,10 +135,12 @@
                                 <li><a class="dropdown-item" href="#">Payment received</a></li>
                             </ul>
                         </div>
-                        
+
                         <div class="dropdown">
-                            <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">
+                            <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button"
+                                id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center me-2"
+                                    style="width: 32px; height: 32px;">
                                     <span class="text-white">A</span>
                                 </div>
                                 <span>Admin</span>
@@ -140,8 +148,11 @@
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#" id="logout-button"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#" id="logout-button"><i
+                                            class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
                             </ul>
                         </div>
                     </div>
@@ -149,7 +160,7 @@
             </nav>
 
             <!--=========MAIN BEGIN===========-->
-            
+
             {{{body}}}
 
             <!--=========MAIN END===========-->
@@ -163,7 +174,7 @@
     </section>
     <!--============ROOT SECTION END==============-->
 
-   
+
     <script type="module" src="/assets/js/app.js"></script>
     <script src="/assets/js/delete.js"></script>
 
@@ -187,7 +198,7 @@
                     window.location.href = redirectTo;
                 }
                 //add logic to prevent reload
-                else if (redirectTo === false){}
+                else if (redirectTo === false) { }
                 else {
                     // Reload the page if there's no redirect
                     window.location.reload();
@@ -213,7 +224,7 @@
         } catch { }
 
         // Sidebar toggle functionality
-        document.getElementById('sidebarToggle').addEventListener('click', function() {
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
             document.querySelector('.sidebar').classList.toggle('collapsed');
             document.querySelector('.main-content').classList.toggle('expanded');
         });
