@@ -11,19 +11,17 @@
     "url": "git+https://github.com/Simon-FOS/made-store.git"
   },
   "license": "MIT",
-  "author": "Simon-FOS",
+  "author": "",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon index.js"
   },
   "dependencies": {
-    "@nathius262/nexusjs": "^0.0.20"
+    "@nathius262/nexusjs": "^0.0.22"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10",
-    "sqlite3": "^5.1.7"
+    "nodemon": "^3.1.11"
   }
 }
