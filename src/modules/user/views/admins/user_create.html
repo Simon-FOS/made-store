@@ -21,7 +21,8 @@
                     </h6>
                 </div>
                 <div class="card-body">
-                    <form id="create-new-user" class="needs-validation" action="/admin/user/create" method="POST" novalidate>
+                    <form id="create-new-user" class="needs-validation" action="/admin/user/create" method="POST"
+                        novalidate>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -51,13 +52,15 @@
                                 <label class="form-label">User Roles</label>
                                 <div class="d-flex gap-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="is_staff" value="true">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                            name="is_staff" value="true">
                                         <label class="form-check-label" for="inlineCheckbox1">
                                             <i class="fas fa-user-tie me-1"></i>Staff Member
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="is_admin" value="true">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                            name="is_admin" value="true">
                                         <label class="form-check-label" for="inlineCheckbox2">
                                             <i class="fas fa-crown me-1"></i>Administrator
                                         </label>
@@ -104,6 +107,8 @@
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
                             </div>
+
+                            <progress id="progressBar" style="display: none;"></progress>
                         </div>
 
                         <!-- Form Actions -->

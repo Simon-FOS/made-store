@@ -3,6 +3,7 @@ const {
   Model
 } = require('sequelize');
 const slugify = require('slugify');
+const { v4: uuidv4 } = require('uuid');
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     /**
@@ -15,6 +16,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Product.init({
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: uuidv4,
+      primaryKey: true,
+      allowNull: false
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -29,8 +36,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     slug: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
+      allowNull: true,
+      unique: true,
     },
     image_url: {
       type: DataTypes.STRING,
@@ -41,8 +48,15 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Product',
     tableName: 'products',
   });
-  Product.beforeCreate((product, options) => {
+  Product.beforeCreate((product) => {
     product.slug = slugify(product.name, { lower: true, strict: true });
   });
+
+  Product.beforeUpdate((product) => {
+    if (product.changed('name')) {
+      product.slug = slugify(product.name, { lower: true, strict: true });
+    }
+  });
+
   return Product;
 };

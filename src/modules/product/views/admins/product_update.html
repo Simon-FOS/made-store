@@ -1,0 +1,113 @@
+<div class="container-fluid py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0">Update Product</h1>
+    <a href="/admin/product" class="btn btn-secondary">
+      <i class="fas fa-arrow-left me-2"></i>Back to List
+    </a>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <form action="/admin/product/{{product.id}}" id="update-form" enctype="multipart/form-data"
+        class="needs-validation" method="POST" novalidate>
+
+        <input type="hidden" name="_method" value="PUT">
+
+        <div class="row">
+          <!-- Name -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" name="name" class="form-control" id="name" value="{{product.name}}" required>
+              <div class="invalid-feedback">
+                Please provide a valid name.
+              </div>
+            </div>
+          </div>
+
+          <!-- Price -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="number" step="0.01" name="price" class="form-control" id="price" value="{{product.price}}"
+                required>
+              <div class="invalid-feedback">
+                Price is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <!-- CKEditor will replace this textarea; its inner HTML is the initial content -->
+              <textarea name="description" class="form-control" id="description" rows="5"
+                required>{{product.description}}</textarea>
+              <div class="invalid-feedback">
+                Please enter a description.
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Upload -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="form-label">Product Image</label>
+              <input type="file" name="image_url" class="form-control" id="imageInput">
+              <div class="form-text">Upload a new image to replace the current one.</div>
+            </div>
+          </div>
+
+          <!-- Current Image Preview -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="form-label">Current Image</label>
+              <div class="border rounded p-2" style="max-width: 180px;">
+                {{#if product.image_url}}
+                <img src="{{product.image_url}}" alt="Product image" class="img-fluid rounded">
+                {{else}}
+                <p class="text-muted small">No image uploaded.</p>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="d-flex gap-2 mt-4">
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save me-2"></i>Update Product
+          </button>
+          <a href="/admin/product" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- CKEditor (add these lines near the bottom, before your uploader script) -->
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script>
+  // Replace the textarea with CKEditor instance
+  if (typeof CKEDITOR !== 'undefined') {
+    CKEDITOR.replace('description', {
+      // Optional configuration:
+      // removePlugins: 'elementspath',
+      // resize_enabled: false,
+      // height: 200
+    });
+
+    // Ensure textarea validation plays nicely with Bootstrap validation
+    // When form is submitted, update the textarea with editor data so server receives it
+    document.getElementById('update-form').addEventListener('submit', function (e) {
+      if (CKEDITOR.instances.description) {
+        CKEDITOR.instances.description.updateElement();
+      }
+    });
+  }
+</script>
+
+<!-- For image uploads -->
+<script type="module" src="/assets/js/uploader.js"></script>
