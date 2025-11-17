@@ -1,0 +1,417 @@
+<main>
+    <!-- ========== PAGE HEADER ========== -->
+    <section class="page-header-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title">Our Products</h1>
+                    <p class="page-subtitle">Premium Skincare & Beauty Products</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Products</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCT CATEGORIES ========== -->
+    <section class="categories-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title text-center mb-5">Shop By Category</h2>
+                    <div class="categories-grid">
+                        <div class="row g-4">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-card text-center">
+                                    <div class="category-icon">
+                                        <i class="fas fa-spa"></i>
+                                    </div>
+                                    <h4>Face Care</h4>
+                                    <p>Cleansers, toners, serums & moisturizers</p>
+                                    <span class="product-count">12 Products</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-card text-center">
+                                    <div class="category-icon">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <h4>Eye Care</h4>
+                                    <p>Specialized treatments for delicate eye area</p>
+                                    <span class="product-count">8 Products</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-card text-center">
+                                    <div class="category-icon">
+                                        <i class="fas fa-lips"></i>
+                                    </div>
+                                    <h4>Lip Care</h4>
+                                    <p>Lip balms, treatments & enhancers</p>
+                                    <span class="product-count">6 Products</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-card text-center">
+                                    <div class="category-icon">
+                                        <i class="fas fa-hand-sparkles"></i>
+                                    </div>
+                                    <h4>Body Care</h4>
+                                    <p>Lotions, butters & body treatments</p>
+                                    <span class="product-count">10 Products</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURED PRODUCTS ========== -->
+    <section class="featured-products-section py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <h2 class="section-title mb-0">All Products</h2>
+                        <div class="filter-controls">
+                            <select class="form-select" id="categoryFilter">
+                                <option value="all">All Categories</option>
+                                <option value="face">Face Care</option>
+                                <option value="eye">Eye Care</option>
+                                <option value="lip">Lip Care</option>
+                                <option value="body">Body Care</option>
+                                <option value="sets">Product Sets</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-6" data-category="face">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1556228578-5f4d3a14e88d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                                alt="Hydrating Face Serum" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-outline-light quick-view-btn" data-bs-toggle="modal"
+                                    data-bs-target="#productModal1">Quick View</button>
+                            </div>
+                            <span class="product-badge badge-sale">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Hydrating Face Serum</h5>
+                            <p class="product-category">Face Care</p>
+                            <p class="product-price">
+                                <span class="current-price">₦4,850.00</span>
+                                <span class="original-price">₦6,000.00</span>
+                            </p>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-sm">Wishlist</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-6" data-category="eye">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+                                alt="Revitalizing Eye Cream" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-outline-light quick-view-btn" data-bs-toggle="modal"
+                                    data-bs-target="#productModal2">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Revitalizing Eye Cream</h5>
+                            <p class="product-category">Eye Care</p>
+                            <p class="product-price">
+                                <span class="current-price">₦7,000.00</span>
+                            </p>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-sm">Wishlist</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-6" data-category="face">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=749&q=80"
+                                alt="Gentle Foam Cleanser" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-outline-light quick-view-btn" data-bs-toggle="modal"
+                                    data-bs-target="#productModal3">Quick View</button>
+                            </div>
+                            <span class="product-badge badge-new">New</span>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Gentle Foam Cleanser</h5>
+                            <p class="product-category">Face Care</p>
+                            <p class="product-price">
+                                <span class="current-price">₦14,500.00</span>
+                            </p>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-sm">Wishlist</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-6" data-category="face">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                                alt="Anti-Aging Moisturizer" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-outline-light quick-view-btn" data-bs-toggle="modal"
+                                    data-bs-target="#productModal4">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Anti-Aging Moisturizer</h5>
+                            <p class="product-category">Face Care</p>
+                            <p class="product-price">
+                                <span class="current-price">₦11,800.00</span>
+                            </p>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-sm">Wishlist</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-lg-3 col-md-6" data-category="lip">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1629196914375-4e02c5bc7ec5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                                alt="Nourishing Lip Balm" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-outline-light quick-view-btn" data-bs-toggle="modal"
+                                    data-bs-target="#productModal5">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Nourishing Lip Balm</h5>
+                            <p class="product-category">Lip Care</p>
+                            <p class="product-price">
+                                <span class="current-price">₦2,500.00</span>
+                            </p>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-sm">Wishlist</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-lg-3 col-md-6" data-category="body">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                                alt="Shea Body Butter" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-outline-light quick-view-btn" data-bs-toggle="modal"
+                                    data-bs-target="#productModal6">Quick View</button>
+                            </div>
+                            <span class="product-badge badge-sale">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Shea Body Butter</h5>
+                            <p class="product-category">Body Care</p>
+                            <p class="product-price">
+                                <span class="current-price">₦5,200.00</span>
+                                <span class="original-price">₦6,500.00</span>
+                            </p>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-sm">Wishlist</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-lg-3 col-md-6" data-category="sets">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1556228578-7c8d87c8f6c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                                alt="Complete Skincare Set" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-outline-light quick-view-btn" data-bs-toggle="modal"
+                                    data-bs-target="#productModal7">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Complete Skincare Set</h5>
+                            <p class="product-category">Product Sets</p>
+                            <p class="product-price">
+                                <span class="current-price">₦25,000.00</span>
+                            </p>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-sm">Wishlist</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col-lg-3 col-md-6" data-category="face">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                                alt="Vitamin C Toner" class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-outline-light quick-view-btn" data-bs-toggle="modal"
+                                    data-bs-target="#productModal8">Quick View</button>
+                            </div>
+                            <span class="product-badge badge-new">New</span>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Vitamin C Toner</h5>
+                            <p class="product-category">Face Care</p>
+                            <p class="product-price">
+                                <span class="current-price">₦8,500.00</span>
+                            </p>
+                            <div class="product-actions">
+                                <button class="btn btn-primary btn-sm add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-sm">Wishlist</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <button class="btn btn-outline-primary btn-lg">Load More Products</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SPECIAL OFFERS ========== -->
+    <section class="offers-section py-5 bg-primary">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="text-white mb-3">Special Summer Offer!</h2>
+                    <p class="text-white mb-4">Get 20% off on all skincare bundles. Limited time offer. Use code:
+                        <strong>SUMMER20</strong></p>
+                    <a href="#" class="btn btn-light btn-lg">Shop Now</a>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="offer-badge">
+                        <span class="discount">20% OFF</span>
+                        <span class="offer-text">Summer Sale</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCT BENEFITS ========== -->
+    <section class="benefits-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Why Choose MadePetal Products?</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card text-center">
+                        <div class="benefit-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>100% Organic</h4>
+                        <p>All our products are made with natural, organic ingredients sourced from sustainable farms.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card text-center">
+                        <div class="benefit-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4>Clinically Tested</h4>
+                        <p>Every formulation undergoes rigorous testing to ensure safety and effectiveness.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card text-center">
+                        <div class="benefit-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h4>Eco-Friendly</h4>
+                        <p>We use sustainable packaging and environmentally conscious manufacturing processes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="cta-products-section py-5 text-center bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Need Help Choosing Products?</h2>
+                    <p class="lead mb-5">Our skincare experts are here to help you find the perfect products for your
+                        skin type and concerns.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-lg me-3">Consult Our Experts</a>
+                        <a href="services.html" class="btn btn-outline-primary btn-lg">View Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Product Quick View Modals -->
+<!-- Modal 1 -->
+<div class="modal fade" id="productModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Hydrating Face Serum</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Modal content would go here -->
+                <p>Product details and description...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add similar modals for other products -->

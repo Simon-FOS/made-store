@@ -1,25 +1,195 @@
-<div class="container py-4">
-  <div class="row">
-    <div class="col-12">
-      <h1 class="h2 mb-4">Product List</h1>
-
+<main>
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header-section py-5">
+    <div class="container">
       <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="page-title">Our Products</h1>
+          <p class="page-subtitle">Premium Skincare & Beauty Products</p>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Products</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCT CATEGORIES ========== -->
+  <section class="categories-section py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title text-center mb-5">Shop By Category</h2>
+          <div class="categories-grid">
+            <div class="row g-4">
+              <div class="col-lg-3 col-md-6">
+                <div class="category-card text-center">
+                  <div class="category-icon">
+                    <i class="fas fa-spa"></i>
+                  </div>
+                  <h4>Face Care</h4>
+                  <p>Cleansers, toners, serums & moisturizers</p>
+                  <span class="product-count">12 Products</span>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="category-card text-center">
+                  <div class="category-icon">
+                    <i class="fas fa-eye"></i>
+                  </div>
+                  <h4>Eye Care</h4>
+                  <p>Specialized treatments for delicate eye area</p>
+                  <span class="product-count">8 Products</span>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="category-card text-center">
+                  <div class="category-icon">
+                    <i class="fas fa-lips"></i>
+                  </div>
+                  <h4>Lip Care</h4>
+                  <p>Lip balms, treatments & enhancers</p>
+                  <span class="product-count">6 Products</span>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="category-card text-center">
+                  <div class="category-icon">
+                    <i class="fas fa-hand-sparkles"></i>
+                  </div>
+                  <h4>Body Care</h4>
+                  <p>Lotions, butters & body treatments</p>
+                  <span class="product-count">10 Products</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED PRODUCTS ========== -->
+  <section class="featured-products-section py-5">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <h2 class="section-title mb-0">All Products</h2>
+            <div class="filter-controls">
+              <select class="form-select" id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="face">Face Care</option>
+                <option value="eye">Eye Care</option>
+                <option value="lip">Lip Care</option>
+                <option value="body">Body Care</option>
+                <option value="sets">Product Sets</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Product 1 -->
         {{#each products}}
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">{{this.name}}</h5>
-              <p class="card-text text-muted">ID: {{this.id}}</p>
-              <a href="/product/{{this.slug}}" class="btn btn-outline-primary btn-sm">
-                View Details
-              </a>
+        <div class="col-lg-3 col-md-6" data-category="face">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="{{{this.image_url}}}" alt="{{this.name}}" class="img-fluid">
+              <div class="product-overlay">
+                <button class="btn btn-primary add-to-cart" data-product-id="{{this.id}}">Add to Cart</button>
+                <button class="btn btn-outline-light quick-view-btn" data-bs-toggle="modal"
+                  data-bs-target="#productModal1">Quick View</button>
+              </div>
+              <span class="product-badge badge-sale">Sale</span>
+            </div>
+            <div class="product-info">
+              <h5 class="product-title">{{this.name}}</h5>
+              <p class="product-category">Face Care</p>
+              <p class="product-price">
+                <span class="current-price">₦{{this.price}}</span>
+              </p>
+              <div class="product-actions">
+                <button class="btn btn-primary btn-sm add-to-cart" data-product-id="{{this.id}}">Add to Cart</button>
+                <button class="btn btn-outline-primary btn-sm">Details</button>
+              </div>
             </div>
           </div>
         </div>
         {{/each}}
       </div>
 
-      {{> pagination}}
+      <!-- Load More Button -->
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <button class="btn btn-outline-primary btn-lg">Load More Products</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCT BENEFITS ========== -->
+  <section class="benefits-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="section-title">Why Choose MadePetal Products?</h2>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="benefit-card text-center">
+            <div class="benefit-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h4>100% Organic</h4>
+            <p>All our products are made with natural, organic ingredients sourced from sustainable farms.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="benefit-card text-center">
+            <div class="benefit-icon">
+              <i class="fas fa-flask"></i>
+            </div>
+            <h4>Clinically Tested</h4>
+            <p>Every formulation undergoes rigorous testing to ensure safety and effectiveness.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="benefit-card text-center">
+            <div class="benefit-icon">
+              <i class="fas fa-recycle"></i>
+            </div>
+            <h4>Eco-Friendly</h4>
+            <p>We use sustainable packaging and environmentally conscious manufacturing processes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Product Quick View Modals -->
+<!-- Modal 1 -->
+<div class="modal fade" id="productModal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Hydrating Face Serum</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Modal content would go here -->
+        <p>Product details and description...</p>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- Add similar modals for other products -->

@@ -1,5 +1,59 @@
-<header>
-    <img src="/assets/img/logo.png" alt="NexusJS Logo">
-    <h1>Welcome to NexusJS</h1>
-    <p>A lightweight Express.js framework with Sequelize, module generation, JWT auth, and a powerful CLI.</p>
-</header>
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 custom-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/mp8.png" alt="MadePetal Logo" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item px-2">
+                    <a class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="beauty_cosmetics">Beauty & Cosmetic</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="spa_massage">Spa & Massage</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="wellness">Wellness & Holistic</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="advanced">Advanced Aesthetics</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="/product">Shop Products</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="/gallery">Gallery</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link cart-icon" href="/checkout">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
