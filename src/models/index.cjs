@@ -2,6 +2,8 @@ const Sequelize = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const configFile = require('../core/sequelize.config.cjs'); // Adjust based on your config
+require('dotenv').config();
+require('pg');
 
 const env = process.env.NODE_ENV || 'development';
 const config = configFile[env];
