@@ -28,6 +28,20 @@ const index_view = async (req, res) => {
     }
 };
 
+const about_view = async (req, res) => {
+    try {
+
+
+        //console.log(result.rows)
+        res.render('about', {
+            pageTitle: "About Us",
+            pageLogo: page_logo
+        });
+    } catch (err) {
+        res.status(500).render('./errors/500', { message: 'Internal Server Error', error: err.message });
+    }
+};
+
 const add_to_cart = async (req, res) => {
     try {
         const { productId } = req.body;
@@ -180,4 +194,4 @@ const checkout_view = async (req, res) => {
 
 
 
-export { index_view, add_to_cart, get_cart_count, checkout_view };
+export { index_view, about_view, add_to_cart, get_cart_count, checkout_view };
