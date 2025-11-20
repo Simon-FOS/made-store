@@ -360,6 +360,34 @@ body {
 }
 
 /* ========== ABOUT SECTION ENHANCEMENTS ========== */
+
+.made-page-header {
+    position: relative;
+    background-image: url('/assets/img/Made.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0px 0;
+    color: #fff;
+}
+
+.made-page-header-overlay {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 100px 0;
+}
+
+.made-page-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.made-page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
 .about-section {
     position: relative;
     overflow: hidden;
@@ -430,7 +458,7 @@ body {
     margin-bottom: 1.5rem;
     font-weight: 700;
     font-size: 2.5rem;
-    background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 100%);
+    background: linear-gradient(135deg, var(--text-dark) 45%, var(--primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -449,6 +477,11 @@ body {
     margin-bottom: 2.5rem;
     line-height: 1.8;
     font-size: 1.1rem;
+}
+
+.made-text-justify {
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .features-list {
@@ -1119,7 +1152,7 @@ footer {
 }
 
 .value-icon i {
-    color: var(--primary);
+    color: var(--primary) !important;
     font-size: 1.8rem;
 }
 

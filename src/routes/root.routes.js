@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {
     index_view, about_view, add_to_cart, get_cart_count, checkout_view,
-    about_view
+
 } from "../controllers/root.controller.js";
 import { dashboard_view } from "../controllers/admin.controller.js";
 
