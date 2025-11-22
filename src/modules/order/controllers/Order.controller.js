@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 const PAYSTACK_SECRET_KEY = process.env.PAYSTACK_SECRET_KEY;
+const page_logo = process.env.PAGELOGO;
 
 /**
  * Initiate Paystack payment
@@ -131,11 +132,13 @@ export const verifyPaystackTransaction = async (req, res) => {
     res.clearCookie('cart', { httpOnly: true });
     if (req.session?.cart) delete req.session.cart;
 
-    return res.status(200).json({
+    return res.status(200).render('order_complete', {
       success: true,
       message: 'Order created successfully!',
       order_id: result.order_id,
-      tracking_id: result.tracking_id
+      tracking_id: result.tracking_id,
+      pageTitle: 'Order Complete',
+      pageLogo: page_logo
     });
 
   } catch (err) {

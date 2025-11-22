@@ -3,10 +3,10 @@ import { v4 as uuidv4 } from 'uuid';
 import * as productService from '../../product/services/Product.service.js';
 
 /**
- * Create guest order after successful payment
+ * Create guest order after successful Paystack payment
  * @param {Object} customerData - { name, email, phone }
  * @param {Array} cartItems - [{ productId, quantity, price }]
- * @param {Object} paymentData - { provider, transactionReference, amount }
+ * @param {Object} paymentData - { provider, transactionReference, amount, raw }
  */
 export async function createOrder(customerData, cartItems, paymentData) {
     const transaction = await db.sequelize.transaction();
@@ -32,25 +32,32 @@ export async function createOrder(customerData, cartItems, paymentData) {
         const orderItems = [];
 
         for (const item of cartItems) {
-            // Fetch product from DB to get accurate price
             const product = await productService.findById(item.productId);
-
-            if (!product) {
-                throw new Error(`Product not found: ID ${item.productId}`);
-            }
+            if (!product) throw new Error(`Product not found: ID ${item.productId}`);
 
             orderItems.push({
                 order_id: order.id,
                 product_id: item.productId,
                 quantity: item.quantity,
-                price: product.price, // use current DB price
+                price: product.price,
                 total_price: product.price * item.quantity,
             });
         }
 
         await db.OrderItem.bulkCreate(orderItems, { transaction });
 
+        // --------------- Create Payment Record ----------------
+        await db.Payment.create({
+            order_id: order.id,
+            payment_provider: paymentData.provider,
+            transaction_reference: paymentData.transactionReference,
+            amount: paymentData.amount,
+            status: 'success',
+            metadata: paymentData.raw || null,
+        }, { transaction });
+
         await transaction.commit();
+
         return { success: true, order_id: order.id, tracking_id: order.tracking_id };
 
     } catch (error) {

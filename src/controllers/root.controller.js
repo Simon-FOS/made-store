@@ -42,6 +42,20 @@ const about_view = async (req, res) => {
     }
 };
 
+const contact_view = async (req, res) => {
+    try {
+
+
+        //console.log(result.rows)
+        res.render('contact', {
+            pageTitle: "Contact Us",
+            pageLogo: page_logo
+        });
+    } catch (err) {
+        res.status(500).render('./errors/500', { message: 'Internal Server Error', error: err.message });
+    }
+};
+
 const add_to_cart = async (req, res) => {
     try {
         const { productId } = req.body;
@@ -194,4 +208,4 @@ const checkout_view = async (req, res) => {
 
 
 
-export { index_view, about_view, add_to_cart, get_cart_count, checkout_view };
+export { index_view, about_view, contact_view, add_to_cart, get_cart_count, checkout_view };

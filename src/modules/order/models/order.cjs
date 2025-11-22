@@ -1,6 +1,6 @@
 'use strict';
 const { Model } = require('sequelize');
-
+const { v4: uuidv4 } = require('uuid');
 module.exports = (sequelize, DataTypes) => {
   class Order extends Model {
     static associate(models) {
@@ -11,6 +11,11 @@ module.exports = (sequelize, DataTypes) => {
 
   Order.init(
     {
+      tracking_id: {
+        type: DataTypes.UUID,
+        allowNull: false,
+        defaultValue: uuidv4(),
+      },
       customer_name: {
         type: DataTypes.STRING,
         allowNull: false,
