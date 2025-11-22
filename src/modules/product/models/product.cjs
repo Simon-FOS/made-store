@@ -13,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      // One-To-One: Product belongs to one Category
+      Product.hasOne(models.ProductCategory, {
+        foreignKey: 'productId',
+        as: 'productCategory'
+      });
     }
   }
   Product.init({

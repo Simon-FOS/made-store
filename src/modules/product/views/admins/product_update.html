@@ -14,6 +14,7 @@
         <input type="hidden" name="_method" value="PUT">
 
         <div class="row">
+
           <!-- Name -->
           <div class="col-md-6">
             <div class="mb-3">
@@ -37,11 +38,29 @@
             </div>
           </div>
 
+          <!-- Category -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select name="category" id="category" class="form-select" required>
+                <option value="">-- Select Category --</option>
+
+                {{#each categories}}
+                <option value="{{this.id}}" {{#if (eq this.id ../product.productCategory.category.id)}}selected{{/if}}>
+                  {{this.name}}
+                </option>
+                {{/each}}
+              </select>
+              <div class="invalid-feedback">
+                Please select a category.
+              </div>
+            </div>
+          </div>
+
           <!-- Description -->
           <div class="col-12">
             <div class="mb-3">
               <label for="description" class="form-label">Description</label>
-              <!-- CKEditor will replace this textarea; its inner HTML is the initial content -->
               <textarea name="description" class="form-control" id="description" rows="5"
                 required>{{product.description}}</textarea>
               <div class="invalid-feedback">
@@ -87,21 +106,12 @@
   </div>
 </div>
 
-<!-- CKEditor (add these lines near the bottom, before your uploader script) -->
 <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 <script>
-  // Replace the textarea with CKEditor instance
   if (typeof CKEDITOR !== 'undefined') {
-    CKEDITOR.replace('description', {
-      // Optional configuration:
-      // removePlugins: 'elementspath',
-      // resize_enabled: false,
-      // height: 200
-    });
+    CKEDITOR.replace('description');
 
-    // Ensure textarea validation plays nicely with Bootstrap validation
-    // When form is submitted, update the textarea with editor data so server receives it
-    document.getElementById('update-form').addEventListener('submit', function (e) {
+    document.getElementById('update-form').addEventListener('submit', function () {
       if (CKEDITOR.instances.description) {
         CKEDITOR.instances.description.updateElement();
       }
@@ -109,5 +119,4 @@
   }
 </script>
 
-<!-- For image uploads -->
 <script type="module" src="/assets/js/uploader.js"></script>

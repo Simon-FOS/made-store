@@ -1,4 +1,5 @@
 import * as service from '../services/admin.Product.service.js';
+import * as categoryService from '../../category/services/admin.Category.service.js';
 
 export const findAll = async (req, res) => {
   const { page, limit, offset } = req.pagination
@@ -23,11 +24,13 @@ export const findAll = async (req, res) => {
 export const findById = async (req, res) => {
   try {
     const data = await service.findById(req.params.id);
+    const categories = await categoryService.findAll({ limit: 1000, offset: 0 });
     res.status(200).render('./admins/product_update', {
       success: true,
       pageTitle: "Update Record",
       layout: "admin",
       PageTitle: "Admin",
+      categories: categories.categorys,
       product: data,
     });
   } catch (err) {
@@ -84,9 +87,12 @@ export const destroy = async (req, res) => {
 
 export const renderCreate = async (req, res) => {
   try {
+
+    const categories = await categoryService.findAll({ limit: 1000, offset: 0 });
     res.status(200).render('./admins/product_create', {
       pageTitle: "Create Product",
       layout: "admin",
+      categories: categories.categorys,
       PageTitle: "Admin"
     });
   } catch (err) {

@@ -10,7 +10,7 @@ module.exports = {
      * await queryInterface.createTable('orders', { id: Sequelize.INTEGER });
      */
     return queryInterface.sequelize.transaction(async (transaction) => {
-      await queryInterface.addColumn('orders', "tracking_id", { type: Sequelize.UUID, allowNull: false, defaultValue: 'N/A' }, { transaction });
+      await queryInterface.addColumn('orders', "tracking_id", { type: Sequelize.UUID, allowNull: true }, { transaction });
     })
 
 

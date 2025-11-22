@@ -4,11 +4,12 @@ export const findAll = async (req, res) => {
 
 
   try {
-    const {page, limit, offset} = req.pagination;
-    const data = await service.findAll({limit, offset});
+    const { page, limit, offset } = req.pagination;
+    const data = await service.findAll({ limit, offset });
     res.status(200).render('./admins/order_list', {
       success: true,
       pageTitle: "Admin",
+      layout: 'admin',
       orders: data.orders,
       currentPage: page,
       totalPages: data.totalPages,
@@ -26,6 +27,7 @@ export const findById = async (req, res) => {
     res.status(200).render('./admins/order_update', {
       success: true,
       pageTitle: "Update Record",
+      layout: 'admin',
       order: data,
     });
   } catch (err) {
@@ -37,9 +39,9 @@ export const findById = async (req, res) => {
 
 export const update = async (req, res) => {
   try {
-    const {status} = req.body
+    const { status } = req.body
     const data = await service.update(req.params.id, status);
-    res.status(200).json({ success: true, data, message:"update successful" });
+    res.status(200).json({ success: true, data, message: "update successful" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
