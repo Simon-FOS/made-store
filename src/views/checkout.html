@@ -93,7 +93,13 @@
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    email: prompt("Please enter your email to continue payment") // get customer email
+                    email: prompt("Please enter your email to continue payment"), // get customer email
+                    // address
+                    address: prompt("Enter your address"),
+                    state: prompt("Enter your state"),
+                    nationality: prompt("Enter your nationality"),
+                    phone: prompt("Enter your phone number"),
+                    alt_phone: prompt("Enter your alternative phone number"),
                 })
             });
 
