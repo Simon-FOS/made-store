@@ -205,120 +205,40 @@
         </div>
 
         <div class="row g-4">
-            <!-- Product 1 -->
-            <div class="col-lg-3 col-md-6">
+
+            {{#each products}}
+            <div class="col-lg-3 col-md-6" data-category="face">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="assets/img/Products/x16.jpg" alt="Hydrating Face Serum" class="img-fluid">
+                        <img src="{{{this.image_url}}}" alt="{{this.name}}" class="img-fluid">
                         <div class="product-overlay">
-                            <button class="btn btn-primary">Add to Cart</button>
-                            <a href="#" class="btn btn-outline-light">Quick View</a>
+                            <button class="btn btn-primary add-to-cart" data-product-id="{{this.id}}">Add to
+                                Cart</button>
+                            <button class="btn btn-outline-light quick-view-btn" data-bs-toggle="modal"
+                                data-bs-target="#productModal1">Quick View</button>
                         </div>
                         <span class="product-badge badge-sale">Sale</span>
                     </div>
                     <div class="product-info">
-                        <h5 class="product-title">Hydrating Face Serum</h5>
+                        <h5 class="product-title">{{this.name}}</h5>
+                        <p class="product-category">{{this.productCategory.category.name}}</p>
                         <p class="product-price">
-                            <span class="current-price">₦4,850.00</span>
-                            <span class="original-price">₦6,000.00</span>
+                            <span class="current-price">₦{{this.price}}</span>
                         </p>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span class="rating-count">(128)</span>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-sm add-to-cart" data-product-id="{{this.id}}">Add to
+                                Cart</button>
+                            <button class="btn btn-outline-primary btn-sm">Details</button>
                         </div>
                     </div>
                 </div>
             </div>
+            {{/each}}
 
-            <!-- Product 2 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="assets/img/Products/x12.jpg" alt="Revitalizing Eye Cream" class="img-fluid">
-                        <div class="product-overlay">
-                            <button class="btn btn-primary">Add to Cart</button>
-                            <a href="#" class="btn btn-outline-light">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h5 class="product-title">Revitalizing Eye Cream</h5>
-                        <p class="product-price">
-                            <span class="current-price">₦7,000.00</span>
-                        </p>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-count">(95)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="assets/img/Products/x14.jpg" alt="Gentle Foam Cleanser" class="img-fluid">
-                        <div class="product-overlay">
-                            <button class="btn btn-primary">Add to Cart</button>
-                            <a href="#" class="btn btn-outline-light">Quick View</a>
-                        </div>
-                        <span class="product-badge badge-new">New</span>
-                    </div>
-                    <div class="product-info">
-                        <h5 class="product-title">Gentle Foam Cleanser</h5>
-                        <p class="product-price">
-                            <span class="current-price">₦14,500.00</span>
-                        </p>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span class="rating-count">(156)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="assets/img/Products/x11.jpg" alt="Anti-Aging Moisturizer" class="img-fluid">
-                        <div class="product-overlay">
-                            <button class="btn btn-primary">Add to Cart</button>
-                            <a href="#" class="btn btn-outline-light">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h5 class="product-title">Anti-Aging Moisturizer</h5>
-                        <p class="product-price">
-                            <span class="current-price">₦11,800.00</span>
-                        </p>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span class="rating-count">(203)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="text-center mt-5">
-            <a href="product.html" class="btn btn-outline-primary btn-lg">View All Products</a>
+            <a href="/product" class="btn btn-outline-primary btn-lg">View All Products</a>
         </div>
     </div>
 </section>

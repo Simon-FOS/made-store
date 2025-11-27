@@ -17,11 +17,12 @@ const page_logo = process.env.PAGELOGO
 const index_view = async (req, res) => {
     try {
 
+        const products = await productService.findAll({ limit: 8, offset: 0 });
 
-        //console.log(result.rows)
         res.render('index', {
             pageTitle: "Home",
-            pageLogo: page_logo
+            pageLogo: page_logo,
+            products: products.products
         });
     } catch (err) {
         res.status(500).render('./errors/500', { message: 'Internal Server Error', error: err.message });

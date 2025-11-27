@@ -5,6 +5,11 @@ import db from '../../../models/index.cjs';
 export const findAll = async ({ limit, offset }) => {
   try {
     const { rows: products, count: totalItems } = await db.Product.findAndCountAll({
+      include: [{
+        model: db.ProductCategory, as: 'productCategory', attributes: ['id'], include: [{
+          model: db.Category, as: 'category', attributes: ['name']
+        }]
+      }],
       limit,
       offset,
       distinct: true,
