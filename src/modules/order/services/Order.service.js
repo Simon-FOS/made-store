@@ -23,7 +23,7 @@ export async function createOrder(customerData, cartItems, paymentData) {
             customer_name: customerData.name,
             customer_phone: customerData.phone,
             total_amount: paymentData.amount,
-            status: 'confirmed',
+            status: 'completed',
             payment_provider: paymentData.provider,
             payment_reference: paymentData.transactionReference,
             paid_at: new Date(),

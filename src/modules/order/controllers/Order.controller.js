@@ -143,7 +143,67 @@ export const verifyPaystackTransaction = async (req, res) => {
 
   } catch (err) {
     console.error('Paystack verification error:', err.message);
-    return res.status(500).json({ success: false, error: 'Failed to verify transaction.' });
+    return res.status(200).render('order_failed', {
+      success: false,
+      message: 'Failed to verify transaction.',
+      pageTitle: 'Order Failed',
+      pageLogo: page_logo
+    });
   }
 };
 
+/**
+ * Paystack Webhook Handler
+ */
+export const paystackWebhook = async (req, res) => {
+  try {
+    // -------- VERIFY SIGNATURE --------
+    const hash = crypto
+      .createHmac('sha512', PAYSTACK_SECRET_KEY)
+      .update(JSON.stringify(req.body))
+      .digest('hex');
+
+    const signature = req.headers['x-paystack-signature'];
+
+    if (hash !== signature) {
+      return res.status(401).send('Invalid signature');
+    }
+
+    const event = req.body;
+
+    // Only handle successful payments
+    if (event.event === 'charge.success') {
+      const data = event.data;
+
+      const reference = data.reference;
+      const amount = data.amount / 100;
+
+      // Extract cart metadata (sent during initialize)
+      const cartItems = data.metadata?.cartItems || [];
+
+      // Customer data
+      const customerData = {
+        email: data.customer.email,
+        phone: data.customer.phone,
+        name: data.customer.first_name || 'Guest'
+      };
+
+      // Create order
+      const result = await orderService.createOrder(customerData, cartItems, {
+        provider: 'paystack',
+        transactionReference: reference,
+        amount: amount,
+        raw: data
+      });
+
+      if (!result.success) {
+        console.error('Webhook Order Create Failed:', result.error);
+      }
+    }
+
+    res.sendStatus(200);
+  } catch (err) {
+    console.error('Webhook Error:', err.message);
+    return res.sendStatus(500);
+  }
+};
