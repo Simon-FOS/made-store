@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
       order_id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         allowNull: false,
       },
       payment_provider: {
