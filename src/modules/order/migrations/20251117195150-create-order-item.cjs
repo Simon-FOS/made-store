@@ -9,11 +9,11 @@ module.exports = {
         type: Sequelize.UUID
       },
       order_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
       },
       product_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
       },
       quantity: {

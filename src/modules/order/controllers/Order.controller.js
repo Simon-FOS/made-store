@@ -132,9 +132,6 @@ export const verifyPaystackTransaction = async (req, res) => {
       name: paymentData.customer.name || 'Guest',
     };
 
-    console.log('payementData:', paymentData);
-    console.log('customerData:', customerData);
-
     // --------------- Create order ----------------
     const result = await orderService.createOrder(customerData, cartItems, {
       provider: 'paystack',
