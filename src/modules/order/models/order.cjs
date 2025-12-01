@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
 
   Order.init(
     {
+      id: {
+        type: DataTypes.UUID,
+        defaultValue: uuidv4,
+        primaryKey: true,
+        allowNull: false
+      },
       tracking_id: {
         type: DataTypes.UUID,
         allowNull: false,
