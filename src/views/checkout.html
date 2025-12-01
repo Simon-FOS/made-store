@@ -81,39 +81,99 @@
             {{/if}}
         </div>
     </section>
+
+    <!-- PAYMENT DETAILS MODAL -->
+    <div class="modal fade" id="paymentModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Enter Your Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="paymentForm">
+                        <div class="mb-3">
+                            <label class="form-label">Email *</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Address *</label>
+                            <input type="text" name="address" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">State *</label>
+                            <input type="text" name="state" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Nationality *</label>
+                            <input type="text" name="nationality" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Phone *</label>
+                            <input type="text" name="phone" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Alternative Phone</label>
+                            <input type="text" name="alt_phone" class="form-control">
+                        </div>
+
+                        <!-- Submit inside form -->
+                        <button type="submit" class="btn btn-success w-100 mt-2">
+                            Proceed to Paystack
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </main>
 
 
 
 <script>
-    document.getElementById('payButton')?.addEventListener('click', async () => {
+    const payButton = document.getElementById('payButton');
+    const paymentForm = document.getElementById('paymentForm');
+
+    // Show modal
+    payButton?.addEventListener('click', () => {
+        const modal = new bootstrap.Modal(document.getElementById('paymentModal'));
+        modal.show();
+    });
+
+    // Listen for form submit
+    paymentForm?.addEventListener('submit', async (event) => {
+        event.preventDefault(); // prevent page reload
+
+        // Build payload using FormData → plain object
+        const formData = new FormData(paymentForm);
+        const payload = Object.fromEntries(formData.entries());
+
         try {
-            // Call your backend to initialize payment
             const response = await fetch('/order/initiate', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    email: prompt("Please enter your email to continue payment"), // get customer email
-                    // address
-                    address: prompt("Enter your address"),
-                    state: prompt("Enter your state"),
-                    nationality: prompt("Enter your nationality"),
-                    phone: prompt("Enter your phone number"),
-                    alt_phone: prompt("Enter your alternative phone number"),
-                })
+                body: JSON.stringify(payload)
             });
 
             const data = await response.json();
 
             if (data.success && data.authorization_url) {
-                // Redirect user to Paystack hosted payment page
                 window.location.href = data.authorization_url;
             } else {
-                alert(data.message || 'Failed to initiate payment. Please try again.');
+                alert(data.message || 'Failed to initiate payment.');
             }
         } catch (error) {
-            console.error('Payment initiation error:', error);
-            alert('An error occurred while initiating payment.');
+            console.error(error);
+            alert("Error initiating payment.");
         }
     });
 </script>
