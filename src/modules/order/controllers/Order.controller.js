@@ -47,15 +47,30 @@ export const initiatePayment = async (req, res) => {
     // -------------------------------
     // Initialize Paystack transaction
     // -------------------------------
+
+    const { email, address, state, nationality, phone, alt_phone } = req.body;
+
+    const paymentInit = {
+      email,
+      amount: totalAmount * 100,
+      currency: 'NGN',
+      metadata: {
+        customerDetails: {
+          email,
+          address,
+          state,
+          nationality,
+          phone,
+          alt_phone,
+        },
+        cartItems: cart
+      },
+      callback_url: `${req.protocol}://${req.get('host')}/order/verify`
+    };
+
     const response = await axios.post(
       'https://api.paystack.co/transaction/initialize',
-      {
-        email: req.body.email,        // customer's email from form
-        amount: totalAmount * 100,    // convert to kobo
-        currency: 'NGN',
-        metadata: { cartItems: cart }, // store full cart
-        callback_url: `${req.protocol}://${req.get('host')}/order/verify`
-      },
+      paymentInit,
       {
         headers: { Authorization: `Bearer ${PAYSTACK_SECRET_KEY}` }
       }
@@ -117,12 +132,19 @@ export const verifyPaystackTransaction = async (req, res) => {
       name: paymentData.customer.name || 'Guest',
     };
 
+    console.log('payementData:', paymentData);
+    console.log('customerData:', customerData);
+
     // --------------- Create order ----------------
     const result = await orderService.createOrder(customerData, cartItems, {
       provider: 'paystack',
       transactionReference: reference,
-      amount: paymentData.amount / 100, // Paystack sends amount in kobo
+      amount: paymentData.amount / 100,
+      raw: paymentData,                     // <-- add this
+      customerDetails: paymentData.metadata?.customerDetails || null
     });
+
+
 
     if (!result.success) {
       return res.status(500).json({ success: false, error: result.error });
@@ -193,8 +215,10 @@ export const paystackWebhook = async (req, res) => {
         provider: 'paystack',
         transactionReference: reference,
         amount: amount,
-        raw: data
+        raw: data,                            // full webhook payload
+        customerDetails: data.metadata?.customerDetails || null
       });
+
 
       if (!result.success) {
         console.error('Webhook Order Create Failed:', result.error);

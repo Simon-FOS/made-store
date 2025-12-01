@@ -54,36 +54,42 @@
                     <label for="paidAt">Paid At</label>
                     <input type="text" class="form-control" id="paidAt" value="{{order.paidAt}}" readonly>
                   </div>
+                  <h5 class="mt-4">Customer Details (Metadata)</h5>
+
                   <div class="form-group">
-                    <label for="paymentChannel">Payment Channel</label>
-                    <input type="text" class="form-control" id="paymentChannel" value="{{order.paymentChannel}}"
-                      readonly>
-                  </div>
-                  <div class="form-group">
-                    <label for="gatewayResponse">Gateway Response</label>
-                    <input type="text" class="form-control" id="gatewayResponse" value="{{order.gatewayResponse}}"
+                    <label>Email</label>
+                    <input type="text" class="form-control" value="{{order.payment.metadata.customerDetails.email}}"
                       readonly>
                   </div>
 
-                  <!-- Address Information -->
-                  <h5 class="mt-4">Address</h5>
-
                   <div class="form-group">
-                    <label for="street_address">Street Address</label>
-                    <input type="text" class="form-control" id="street_address" value="{{order.address.street_address}}"
+                    <label>Address</label>
+                    <input type="text" class="form-control" value="{{order.payment.metadata.customerDetails.address}}"
                       readonly>
                   </div>
+
                   <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" id="city" value="{{order.address.city}}" readonly>
+                    <label>State</label>
+                    <input type="text" class="form-control" value="{{order.payment.metadata.customerDetails.state}}"
+                      readonly>
                   </div>
+
                   <div class="form-group">
-                    <label for="state">State</label>
-                    <input type="text" class="form-control" id="state" value="{{order.address.state}}" readonly>
+                    <label>Nationality</label>
+                    <input type="text" class="form-control"
+                      value="{{order.payment.metadata.customerDetails.nationality}}" readonly>
                   </div>
+
                   <div class="form-group">
-                    <label for="country">Country</label>
-                    <input type="text" class="form-control" id="country" value="{{order.address.country}}" readonly>
+                    <label>Phone</label>
+                    <input type="text" class="form-control" value="{{order.payment.metadata.customerDetails.phone}}"
+                      readonly>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Alternative Phone</label>
+                    <input type="text" class="form-control" value="{{order.payment.metadata.customerDetails.alt_phone}}"
+                      readonly>
                   </div>
 
                   <!-- Items -->

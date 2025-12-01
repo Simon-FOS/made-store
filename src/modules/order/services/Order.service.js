@@ -16,7 +16,7 @@ export async function createOrder(customerData, cartItems, paymentData) {
             throw new Error('Cart is empty or invalid');
         }
 
-        // --------------- Create Order ----------------
+        // ---------------- Create Order ----------------
         const order = await db.Order.create({
             tracking_id: uuidv4(),
             customer_email: customerData.email,
@@ -29,6 +29,7 @@ export async function createOrder(customerData, cartItems, paymentData) {
             paid_at: new Date(),
         }, { transaction });
 
+        // ---------------- Prepare Order Items ----------------
         const orderItems = [];
 
         for (const item of cartItems) {
@@ -46,14 +47,21 @@ export async function createOrder(customerData, cartItems, paymentData) {
 
         await db.OrderItem.bulkCreate(orderItems, { transaction });
 
-        // --------------- Create Payment Record ----------------
+        // ---------------- PAYMENT RECORD WITH METADATA ----------------
         await db.Payment.create({
             order_id: order.id,
             payment_provider: paymentData.provider,
             transaction_reference: paymentData.transactionReference,
             amount: paymentData.amount,
             status: 'success',
-            metadata: paymentData.raw || null,
+
+            // ---- STORE PAYSTACK METADATA (JSONB) ----
+            metadata: {
+                paystackData: paymentData.raw || null,         // raw event or verify response
+                customerDetails: paymentData.customerDetails || null, // address, phone, state, etc.
+                cartItems: cartItems                           // always useful for auditing
+            }
+
         }, { transaction });
 
         await transaction.commit();

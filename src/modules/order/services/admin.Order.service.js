@@ -43,7 +43,8 @@ export const findById = async (id) => {
         },
         {
           model: Payment,
-          as: 'payment'
+          as: 'payment',
+          attributes: ['id', 'payment_provider', 'transaction_reference', 'amount', 'status', 'metadata']
         }
       ]
     });
