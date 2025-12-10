@@ -207,6 +207,20 @@ const checkout_view = async (req, res) => {
     }
 };
 
+//=============================
+const prices_view = async (req, res) => {
+    try {
 
+        const products = await productService.findAll({ limit: 8, offset: 0 });
 
-export { index_view, about_view, contact_view, add_to_cart, get_cart_count, checkout_view };
+        res.render('prices', {
+            pageTitle: "Price List",
+            pageLogo: page_logo,
+            products: products.products
+        });
+    } catch (err) {
+        res.status(500).render('./errors/500', { message: 'Internal Server Error', error: err.message });
+    }
+};
+
+export { index_view, about_view, contact_view, add_to_cart, get_cart_count, checkout_view, prices_view };
