@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | MadePetal Clinic and Spa</title>
+    <style>
+        :root {
+            --primary: #8B7355;
+            /* Earthy brown for elegance */
+            --secondary: #D4B996;
+            /* Light beige for softness */
+            --accent: #7A9D96;
+            /* Soft teal for tranquility */
+            --text-dark: #333333;
+            /* Dark gray for text */
+            --text-light: #5A5A5A;
+            /* Medium gray for secondary text */
+            --background: #F9F7F4;
+            /* Off-white for background */
+            --white: #FFFFFF;
+            --border: #E8E2D9;
+            /* Light border color */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--white) 100%);
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+        }
+
+        /* Policy Content */
+        .policy-content {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            margin-bottom: 60px;
+        }
+
+        .policy-section {
+            margin-bottom: 40px;
+        }
+
+        .policy-section h2 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .policy-section h3 {
+            font-size: 20px;
+            color: var(--accent);
+            margin: 25px 0 15px;
+        }
+
+        .policy-section p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .policy-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .policy-section li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .highlight-box {
+            background-color: rgba(212, 185, 150, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .policy-content {
+                padding: 30px 20px;
+            }
+
+            .footer-section {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy and trust are of utmost importance to us. This policy outlines how we collect, use, and
+                protect your personal information.</p>
+        </div>
+    </section>
+
+    <!-- Policy Content -->
+    <div class="container">
+        <div class="policy-content">
+            <div class="policy-section">
+                <h2>1. Introduction</h2>
+                <p>MadePetal Clinic and Spa ("we," "our," or "us") is committed to protecting the privacy and security
+                    of your personal information. This Privacy Policy explains how we collect, use, disclose, and
+                    safeguard your information when you visit our clinic, use our services, purchase our products, or
+                    interact with us through our website or social media channels.</p>
+                <p>By engaging with our services, you agree to the collection and use of information in accordance with
+                    this policy.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>2. Information We Collect</h2>
+                <p>We collect several types of information to provide and improve our services to you.</p>
+
+                <h3>a) Personal Identification Information</h3>
+                <p>This includes your name, postal address, email address, phone number, date of birth, and gender.</p>
+
+                <h3>b) Medical and Aesthetic Information</h3>
+                <p>To ensure safe and effective treatment, we collect relevant medical history, skin concerns (e.g.,
+                    acne, hyperpigmentation, allergies), treatment preferences, and progress notes.</p>
+
+                <h3>c) Financial Information</h3>
+                <p>When you make a purchase, we process payment details securely through third-party payment processors.
+                    We do not store your full credit or debit card information on our servers.</p>
+
+                <h3>d) Images and Media</h3>
+                <p>For professional documentation and progress tracking, we may take photographs or videos during your
+                    sessions. Any use of these images for marketing or promotional purposes will <strong>only</strong>
+                    be done with your prior, explicit consent.</p>
+
+                <h3>e) Technical Information</h3>
+                <p>When you visit our website, we may automatically collect information such as your IP address, browser
+                    type, device information, and pages you visit through cookies and similar tracking technologies.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>3. How We Use Your Information</h2>
+                <p>We use the information we collect for the following purposes:</p>
+                <ul>
+                    <li><strong>Service Delivery:</strong> To provide personalized spa, aesthetic, and skincare
+                        treatments tailored to your needs.</li>
+                    <li><strong>Product Fulfillment:</strong> To process, manage, and ship your skincare orders, both
+                        locally and internationally.</li>
+                    <li><strong>Client Communication:</strong> To schedule and confirm appointments, send service
+                        reminders, and respond to your inquiries.</li>
+                    <li><strong>Personalized Care:</strong> To maintain your treatment history, monitor your progress,
+                        and ensure continuity of care.</li>
+                    <li><strong>Marketing and Promotion:</strong> With your explicit consent, we may use testimonials or
+                        before-and-after photos in promotional campaigns.</li>
+                    <li><strong>Legal and Regulatory Compliance:</strong> To meet our obligations for tax, insurance,
+                        and other regulatory requirements.</li>
+                    <li><strong>Security and Fraud Prevention:</strong> To protect our services, detect malicious
+                        activities, and prevent fraud.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>4. Legal Basis for Processing Your Data</h2>
+                <p>Our processing of your personal information is based on one or more of the following legal grounds:
+                </p>
+                <ul>
+                    <li><strong>Your Consent:</strong> For example, when you explicitly agree to the use of your images
+                        for marketing.</li>
+                    <li><strong>Performance of a Contract:</strong> To fulfill our obligations to you when you purchase
+                        a service or product.</li>
+                    <li><strong>Legitimate Interests:</strong> To operate our business effectively and improve your
+                        client experience, where such interests are not overridden by your rights.</li>
+                    <li><strong>Legal Obligation:</strong> To comply with applicable laws and regulations.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>5. How We Share Your Information</h2>
+                <p>We value your trust and do not sell your personal data. We may share your information in the
+                    following limited circumstances:</p>
+                <ul>
+                    <li><strong>With Service Providers:</strong> We engage trusted third parties to perform functions
+                        such as payment processing, shipping, and IT support. These parties are contractually obligated
+                        to handle your data securely and confidentially.</li>
+                    <li><strong>For Professional Collaboration:</strong> With your consent, we may share relevant
+                        information with other healthcare or aesthetic professionals involved in your care.</li>
+                    <li><strong>For Legal Reasons:</strong> Where required by law, we may disclose information to law
+                        enforcement, regulators, or other legal entities.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>6. Our Policy on Images and Media</h2>
+                <div class="highlight-box">
+                    <p><strong>Session Photography:</strong> Photos or videos may be taken for professional
+                        documentation, progress tracking, and treatment planning.</p>
+                    <p><strong>Consent Requirement:</strong> We will always request your explicit written or verbal
+                        consent before using any images or media for promotional or educational purposes.</p>
+                    <p><strong>Withdrawal of Consent:</strong> You may withdraw your consent for the use of your images
+                        at any time by contacting us using the details provided below.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>7. Data Storage and Security</h2>
+                <p>We implement appropriate technical and organizational measures to protect your personal information:
+                </p>
+                <ul>
+                    <li>All client records (both digital and physical) are stored securely with restricted access to
+                        authorized personnel only.</li>
+                    <li>We use encryption, firewalls, and access controls to protect digital data.</li>
+                    <li>Physical files are stored in locked, secure facilities.</li>
+                    <li>We retain your data only for as long as necessary to fulfill the purposes outlined in this
+                        policy, unless a longer retention period is required by law.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>8. Your Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access the personal data we hold about you</li>
+                    <li>Request correction of inaccurate or incomplete information</li>
+                    <li>Request deletion of your personal data (subject to legal requirements)</li>
+                    <li>Withdraw consent for marketing communications or image usage</li>
+                    <li>Object to certain processing activities</li>
+                    <li>Request a copy of your personal data in a portable format</li>
+                </ul>
+                <p>To exercise any of these rights, please contact us using the details provided below.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>9. Cookies and Online Tracking</h2>
+                <p>Our website may use cookies and similar technologies to:</p>
+                <ul>
+                    <li>Enhance your browsing experience</li>
+                    <li>Analyze website traffic and usage patterns</li>
+                    <li>Deliver personalized content and promotions</li>
+                </ul>
+                <p>You can manage your cookie preferences through your browser settings, though this may affect the
+                    functionality of our website.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>10. Children's Privacy</h2>
+                <p>Our services are intended for individuals aged 18 and above. We do not knowingly collect personal
+                    information from minors. For individuals under 18, we require verifiable parental or guardian
+                    consent before providing any treatments or collecting personal information.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>11. International Data Transfers</h2>
+                <p>As we ship products globally, your information may be transferred to and processed in countries
+                    outside of Nigeria. We ensure that appropriate safeguards are in place to protect your data in
+                    accordance with this Privacy Policy and applicable data protection laws.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>12. Changes to This Policy</h2>
+                <p>We may update this Privacy Policy periodically to reflect changes in our practices, technologies, or
+                    legal requirements. The updated version will be posted on our website with the effective date. We
+                    encourage you to review this policy regularly.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>13. Contact Us</h2>
+                <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices,
+                    please contact us:</p>
+                <p><strong>MadePetal Clinic and Spa</strong><br>
+                    Same Building with Trust Micro-Finance Bank, Opposite The Palms, Km1, Magboro, Lagos-Ibadan Express
+                    Way<br>
+                    Email: madepetalng@gmail.com<br>
+                    Phone: 08130586133</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

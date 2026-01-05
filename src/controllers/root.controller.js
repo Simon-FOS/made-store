@@ -223,4 +223,19 @@ const prices_view = async (req, res) => {
     }
 };
 
-export { index_view, about_view, contact_view, add_to_cart, get_cart_count, checkout_view, prices_view };
+const consent_view = async (req, res) => {
+    try {
+
+        const products = await productService.findAll({ limit: 8, offset: 0 });
+
+        res.render('consent', {
+            pageTitle: "Client Consent",
+            pageLogo: page_logo,
+            products: products.products
+        });
+    } catch (err) {
+        res.status(500).render('./errors/500', { message: 'Internal Server Error', error: err.message });
+    }
+};
+
+export { index_view, about_view, contact_view, add_to_cart, get_cart_count, checkout_view, prices_view, consent_view };
