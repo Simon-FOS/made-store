@@ -17,7 +17,7 @@ router.get('/cart/count', get_cart_count);
 router.get('/checkout', checkout_view);
 router.get('/admin', dashboard_view);
 router.get('/consent', consent_view);
-router.get('/privacy-policy', policy_view);
+router.get('/policy', policy_view);
 
 
 
